@@ -12,8 +12,6 @@ curl "https://raw.githubusercontent.com/gaoyifan/china-operator-ip/ip-lists/chin
 sed -i "s/[[:space:]]//g" "./ipv4-bgp.txt"
 curl "http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest" | grep ipv4 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > ipv4-apnic.txt
 sed -i "s/[[:space:]]//g" "./ipv4-apnic.txt"
-wget `curl -s https://api.github.com/repos/zhanhb/cidr-merger/releases/latest | grep -Po '(?<=download_url\"\: \").*linux-amd64'`
-mv ./cidr-merger-linux-amd64 ./cidr-merger
 chmod +x ./cidr-merger
 cat ./ipv4*.txt | ./cidr-merger -s > ./ipv4.txt
 cp ./ipv4.txt ./ipv4.yaml
