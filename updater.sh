@@ -33,9 +33,9 @@ sed -i "s|$|&'|g" ./ipv6.yaml
 sed -i "1s|^|payload:\n|" ./ipv6.yaml
 cp ./ipv6.txt ./ipv6.conf
 sed -i "s|^|IP-CIDR,|g" ./ipv6.conf
-# chmod +x ./cidr2mmdb
-# ./cidr2mmdb -i ./ipv4.txt -o ./ipv4.mmdb
-# ./cidr2mmdb -i ./ipv6.txt -o ./ipv6.mmdb
+chmod +x ./cidr2mmdb
+./cidr2mmdb -i ./ipv4.txt -o ./ipv4.mmdb
+./cidr2mmdb -i ./ipv6.txt -o ./ipv6.mmdb
 rm cidr-merger *bgp.txt *apnic.txt
 updated=`date --rfc-3339 sec`
 git init

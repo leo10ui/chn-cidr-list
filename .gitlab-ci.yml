@@ -1,6 +1,7 @@
 update:
-  stage: deploy
   script:
     - curl 'https://gitlab.com/fernvenue/chn-cidr-list/-/raw/master/updater.sh' -o ./updater.sh
     - chmod +x ./updater.sh
     - ./updater.sh
+  only:
+    - schedules
