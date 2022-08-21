@@ -1,4 +1,4 @@
-# CHN CIDR LIST
+# CHN CIDR list
 
 [![chn-cidr-list](https://img.shields.io/badge/LICENSE-BSD3%20Clause%20Liscense-red?style=flat-square)](./LICENSE)
 [![chn-cidr-list](https://img.shields.io/badge/GitHub-CHN%20CIDR%20list-blueviolet?style=flat-square&logo=github)](https://github.com/fernvenue/chn-cidr-list)
