@@ -22,16 +22,20 @@ sed -i "s|^|IP-CIDR,|g" ./*.conf
 sed -i "s|^|  - '&|g" ./*.yaml
 sed -i "s|$|&'|g"  ./*.yaml
 sed -i "1s|^|payload:\n|" ./*.yaml
+cat ./ipv4.txt ./ipv6.txt > ./ip.txt
+cat ./ipv4.conf ./ipv6.conf > ./ip.conf
+cat ./ipv4.yaml ./ipv6.yaml > ./ip.yaml
 rm ./*.mmdb
 updated=`date --rfc-3339 sec`
-sed -i "1i # GitHub: https://github.com/fernvenue/chn-cidr-list" ./ipv*
-sed -i "1i # GitLab: https://gitlab.com/fernvenue/chn-cidr-list" ./ipv*
-sed -i "1i # Updated: $updated" ./ipv*
-sed -i "1i # License: BSD-3-Clause License" ./ipv*
-sed -i "1i # CHN CIDR list" ./ipv*
+sed -i "1i # GitHub: https://github.com/fernvenue/chn-cidr-list" ./ip*
+sed -i "1i # GitLab: https://gitlab.com/fernvenue/chn-cidr-list" ./ip*
+sed -i "1i # Updated: $updated" ./ip*
+sed -i "1i # License: BSD-3-Clause License" ./ip*
+sed -i "1i # CHN CIDR list" ./ip*
 chmod +x ./tools/cidr2mmdb
 ./tools/cidr2mmdb -i ./ipv4.txt -o ./ipv4.mmdb
 ./tools/cidr2mmdb -i ./ipv6.txt -o ./ipv6.mmdb
+./tools/cidr2mmdb -i ./ip.txt -o ./ip.mmdb
 rm *.list
 git init
 git add .
