@@ -1,6 +1,6 @@
 # CHN CIDR list
 # License: BSD-3-Clause License
-# Updated: 2022-09-06 03:02:41+00:00
+# Updated: 2022-09-07 03:02:40+00:00
 # GitLab: https://gitlab.com/fernvenue/chn-cidr-list
 # GitHub: https://github.com/fernvenue/chn-cidr-list
 1.0.1.0/24
@@ -8124,7 +8124,6 @@
 2a06:a005:560::/48
 2a06:a005:562::/47
 2a06:a005:580::/44
-2a06:a005:5aa::/48
 2a06:a005:5ae::/48
 2a06:a005:660::/45
 2a06:a005:7c0::/44
